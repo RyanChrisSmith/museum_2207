@@ -32,10 +32,9 @@ class Museum
   def patrons_by_exhibit_interest
     result = Hash.new()
     @exhibits.each do |exhibit|
-      result[exhibit] = @patrons.select do |patron|
-          patron.interests.include?(exhibit.name)
+      result[exhibit] = @patrons.select {|patron|
+          patron.interests.include?(exhibit.name)}
       end
-    end
     result
   end
 
